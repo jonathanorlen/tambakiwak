@@ -12,12 +12,12 @@ class Dashboard extends CI_Controller {
 		}else{
 			$this->load->library('Password');
 			$this->load->model('admin/Model_user');
-			$this->load->model('admin/Model_media','media');
+			// $this->load->model('admin/Model_media','media');
 		}
 	}
 
 	public function index(){
-		$data['total_media'] = $this->media->total_media();
+		// $data['total_media'] = $this->media->total_media();
 		$data['hak'] = 'siap';
 		$data['active'] = 'dashboard';
 		$data['content'] = 'admin/dashboard';

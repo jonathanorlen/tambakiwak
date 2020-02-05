@@ -9,7 +9,7 @@
                 <i class="nc-icon nc-paper text-warning"></i>
               </div>
             </div>
-            <div class="col-7 col-md-8">
+            <!-- <div class="col-7 col-md-8">
               <div class="numbers">
                 <p class="card-category">Media</p>
                 <p class="card-title"><?php echo $total_media?>
@@ -17,7 +17,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
               <!-- <div class="card-footer ">
                 <hr>
                 <div class="stats">
