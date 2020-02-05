@@ -17,8 +17,8 @@
         <p>Produk</p>
       </a>
     </li>
-    <li <?=($active == 'kategori_produk')?'class="active"':''?>>
-      <a href="<?php echo base_url().'admin/kategori_produk'?>">
+    <li <?=($active == 'produk kategori')?'class="active"':''?>>
+      <a href="<?php echo base_url().'admin/produkkategori'?>">
         <i class="nc-icon nc-paper"></i>
         <p>Kategori Produk</p>
       </a>
@@ -29,14 +29,6 @@
         <p>Order</p>
       </a>
     </li>
-    <?php if($this->session->userdata('data')->hak_akses == 'super user'){?>
-      <li <?=($active == 'user')?'class="active"':''?>>
-        <a href="<?php echo base_url().'admin/user'?>">
-          <i class="nc-icon nc-single-02"></i>
-          <p>User</p>
-        </a>
-      </li>
-    <?php }?>
   </ul>
 </div>
 </div>

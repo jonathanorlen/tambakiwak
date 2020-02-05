@@ -1,8 +1,8 @@
 <div class="content">
   <div class="row">
     <div class="col-md-12">
-      <a href="<?php echo base_url('admin/produk/tambah')?>">
-        <button type="button" class="btn btn-primary btn-lg col-md-4 col-sm-12 col-12"><i class="nc-icon nc-simple-add"></i> Tambah Produk</button>
+      <a href="<?php echo base_url('admin/produkkategori/tambah')?>">
+        <button type="button" class="btn btn-primary btn-lg col-md-4 col-sm-12 col-12"><i class="nc-icon nc-simple-add"></i> Produk Kategori </button>
       </a>
       <div class="card">
         <div class="card-body">
@@ -10,13 +10,13 @@
             <table class="table">
               <thead class=" text-primary">
                 <th>
-                  Nama Produk
+                  Gambar
                 </th>
                 <th>
-                  Harga
+                  Nama
                 </th>
                 <th>
-                  Satuan
+                  Status
                 </th>
                 <th class="text-right">
                   Action
@@ -27,23 +27,23 @@
                 foreach ($list as $data){
                  ?>
                  <tr>
-                  <td>
+                 <td>
+                   <img src="<?php echo base_url('upload/itemkategori/'.$data['gambar']);?>"  width="80px">
+                 </td>
+                   <td>
                     <?php echo $data['nama']?>
                   </td>
                   <td>
-                  <?php echo $data['harga']?>
+                    <?php echo $data['status']?>
                   </td>
-                  <td>
-                  <?php echo $data['satuan']?>
-                  </td>
-                  <td>
-                    <a href="<?php echo base_url('admin/produk/edit/'.$data['id']);?>">
+                    <td class="text-right">
+                      <a href="<?php echo base_url('admin/produkkategori/edit/'.$data['id']);?>">
                         <button type="button" class="btn btn-warning"><!--<i class="nc-icon nc-simple-add"></i>--> Edit </button>
                       </a>
-                      <a onclick="deletdata('<?php echo base_url('admin/produk/hapus/'.$data['id']);?>')">
+                      <a onclick="deletdata('<?php echo base_url('admin/produkkategori/hapus/'.$data['id']);?>')">
                         <button type="button" class="btn btn-danger">Hapus </button>
                       </a>
-                  </td>
+                    </td>
                   </tr>
                 <?php }
                 ?>

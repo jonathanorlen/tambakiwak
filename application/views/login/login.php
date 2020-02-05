@@ -42,7 +42,7 @@
                 <form method="post" action="<?php echo base_url().'admin/login/proses'?>">
                     <div class="form-left-to-w3l">
                         <span class="fa fa-user-o" aria-hidden="true"></span>
-                        <input type="text" name="username" placeholder="Username" required="">
+                        <input type="text" name="email" placeholder="Email" required="">
 
                         <div class="clear"></div>
                     </div>

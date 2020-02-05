@@ -9,17 +9,17 @@ class Login extends CI_Controller {
     $this->load->view('login/login');
   }
   public function proses() {
-    $username = $this->input->post('username');
+    $email = $this->input->post('email');
     $password = passwordEncrypt($this->input->post('password'));
 
-    $get = $this->db->query("SELECT * FROM users WHERE username='$username' AND password='$password'");
+    $get = $this->db->query("SELECT * FROM user WHERE email='$email' AND password='$password'");
     $hasil = $get->row();
     echo $this->db->last_query();
     $where = array(
-      'username' => $username,
+      'email' => $email,
       'password' => $password
     );
-    $cek = $this->M_login->cek_login("users",$where)->num_rows();
+    $cek = $this->M_login->cek_login("user",$where)->num_rows();
     if($cek > 0)
     { 
       if ($hasil->status = '1') {
@@ -34,7 +34,7 @@ class Login extends CI_Controller {
         redirect(base_url("admin/login"));
       }
     }else{
-      $this->notification->error('Username tidak ditemukan atau password tidak sama');
+      $this->notification->error('Email tidak ditemukan atau password tidak sama');
       redirect(base_url("admin/login"));
     }
   }

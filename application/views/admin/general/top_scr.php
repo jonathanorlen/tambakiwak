@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
+  <link href="<?php echo base_url('/assets/admin/css/style.css')?>" rel="stylesheet" />
   <link href="<?php echo base_url('/assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
   <link href="<?php echo base_url('/assets/admin/css/paper-dashboard.css?v=2.0.0')?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->

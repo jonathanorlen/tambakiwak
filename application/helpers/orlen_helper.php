@@ -93,3 +93,8 @@ function TanggalIndo($date){
     $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;        
     return($result);
 }
+
+function timeStamp(){
+    $date = new DateTime();
+    return $date->getTimeStamp();
+}
