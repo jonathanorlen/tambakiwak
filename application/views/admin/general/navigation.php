@@ -11,6 +11,12 @@
         <p>Dashboard</p>
       </a>
     </li>
+    <li <?= ($active == 'banner')?'class="active"':''?>>
+      <a href="<?php echo base_url().'admin/banner'?>">
+        <i class="nc-icon nc-bank"></i>
+        <p>Banner</p>
+      </a>
+    </li>
     <li <?=($active == 'produk')?'class="active"':''?>>
       <a href="<?php echo base_url().'admin/produk'?>">
         <i class="nc-icon nc-paper"></i>
@@ -27,6 +33,12 @@
       <a href="<?php echo base_url().'admin/order'?>">
         <i class="nc-icon nc-paper"></i>
         <p>Order</p>
+      </a>
+    </li>
+    <li <?=($active == 'kategori_produk')?'class="active"':''?>>
+      <a href="<?php echo base_url().'admin/user'?>">
+        <i class="nc-icon nc-paper"></i>
+        <p>User</p>
       </a>
     </li>
   </ul>

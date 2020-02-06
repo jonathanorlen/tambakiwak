@@ -10,13 +10,10 @@
             <table class="table">
               <thead class=" text-primary">
                 <th>
-                  Username
+                  Nama
                 </th>
                 <th>
                   Email
-                </th>
-                <th width="15%">
-                  Status
                 </th>
                 <th class="text-right">
                   Action
@@ -31,14 +28,14 @@
                  ?>
                  <tr>
                   <td>
-                    <?php echo $data['username']    ?>
+                    <?php echo $data['nama']    ?>
                   </td>
                   <td>
                     <?php echo $data['email']    ?>
                   </td>
-                  <td>
+                  <!-- <td>
                     <?php echo cek_status($data['status'])  ?>
-                  </td>
+                  </td> -->
                   <td>
                   <a href="<?php echo base_url('admin/user/edit/');echo $data['id']?>">
                         <button type="button" class="btn btn-warning"><!--<i class="nc-icon nc-simple-add"></i>--> Edit </button>

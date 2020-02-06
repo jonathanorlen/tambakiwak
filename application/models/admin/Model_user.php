@@ -4,13 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_user extends CI_Model {
 	function __construct(){
         parent::__construct();
-        $this->table = 'users';
+        $this->table = 'user';
         $this->field_id = 'id';
     }
 
     public function getAllDataGroup()
 	{	
-		$this->db->where('hak_akses !=','super user');
 		$query = $this->db->get($this->table);
      	return $query->result_array();
 	}
