@@ -14,11 +14,12 @@ class Login extends CI_Controller {
 
     $get = $this->db->query("SELECT * FROM admin WHERE email='$email' AND password='$password'");
     $hasil = $get->row();
-    echo $this->db->last_query();
+    
     $where = array(
       'email' => $email,
       'password' => $password
     );
+
     $cek = $this->M_login->cek_login("admin",$where)->num_rows();
     if($cek > 0)
     { 

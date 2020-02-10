@@ -1,35 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_user extends CI_Model {
+class Model_transaction extends CI_Model {
 	function __construct(){
 		parent::__construct();
-		$this->table = 'user';
+		$this->table = 'detail_transaksi';
 		$this->field_id = 'id';
 	}
 
-	public function getAllDataGroup()
+	public function getAllData($user)
 	{	
+		$this->db->where('kode_transaksi',0);
+		$this->db->where('user',$user);
 		$query = $this->db->get($this->table);
-		return $query->result_array();
+		return $this->db->affected_rows();
 	}
 
-	public function getAllData($tanggal)
+	function getOne($item,$user)
 	{	
-		$query = $this->db->get_where($this->table, array('tanggal' => $tanggal));
-		return $query->result_array();
-	}
-
-	function getEmail($email)
-	{	
-		$query = $this->db->get_where("{$this->table}", array("email" => $email));
-		return $query->row_array();
-	}
-
-	function getOne($id)
-	{	
-		$query = $this->db->get_where("{$this->table}", array("id" => $id));
-		return $query->row_array();
+		$this->db->where("user",$user);
+		$this->db->where("item",$item);
+		$query = $this->db->get("{$this->table}");
+		return $this->db->affected_rows();
 	}
 
 	public function create($data)
@@ -38,8 +30,10 @@ class Model_user extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
-	function update($id, $data){
-		$this->db->where(array("{$this->field_id}" => $id));
+	function update($item, $user,$qty, $total){
+		$data['qty'] = $qty;
+		$data['total'] = $total;
+		$this->db->where(array("item" => $item,"user" => $user));
 		$this->db->update($this->table, $data);
 		return $this->db->affected_rows();
 	}
@@ -57,5 +51,13 @@ class Model_user extends CI_Model {
 		$row = $query->row();
 
 		return $row;
+	}
+
+	public function total_media(){
+		$query = $this->db->select('*')
+		->get('media');
+		$num = $query->num_rows();
+
+		return $num;
 	}
 }
